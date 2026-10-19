@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Estudo - Teste de Perfil</title>
+    <style>
+        :root {
+            --bg-color: #121214;
+            --card-bg: #1a1a1e;
+            --text-main: #e1e1e6;
+            --text-muted: #8d8d99;
+            --border-color: #29292e;
+            --accent-color: #4e4ec6;
+            --accent-hover: #5f5fe2;
+            --input-bg: #202024;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 680px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        input[type="text"], input[type="email"], input[type="date"] {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(78, 78, 198, 0.2);
+        }
+
+        .question-block {
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .option-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .option-item:hover {
+            background-color: #242429;
+        }
+
+        .option-item input[type="radio"] {
+            margin-top: 4px;
+            margin-right: 12px;
+            accent-color: var(--accent-color);
+        }
+
+        .option-label {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .terms-block {
+            margin-top: 35px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px dashed var(--border-color);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .checkbox-container input {
+            margin-top: 3px;
+            margin-right: 10px;
+            accent-color: var(--accent-color);
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .result-placeholder {
+            margin-top: 35px;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0 0 10px 0;">Trabalho de Estudo - Teste de Perfil</p>
+    <h1>Descubra o seu Perfil Psicológico</h1>
+
+    <form>
+        <div class="section-title">Identificação</div>
+        
+        <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail de Contacto:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nascimento">Data de Nascimento:</label>
+            <input type="date" id="nascimento" name="nascimento" required>
+        </div>
+
+        <div class="section-title">Questionário</div>
+
+        <!-- Pergunta 1 -->
+        <div class="question-block">
+            <div class="question-text">1. Como reage perante um imprevisto de última hora?</div>
+            <label class="option-item">
+                <input type="radio" name="q1" value="A">
+                <span class="option-label"><strong>A</strong> - Adapto-me rapidamente e procuro soluções.</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="q1" value="B">
+                <span class="option-label"><strong>B</strong> - Sinto alguma ansiedade, mas acabo por resolver.</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="q1" value="C">
+                <span class="option-label"><strong>C</strong> - Prefiro planear tudo para evitar que isso aconteça.</span>
+            </label>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="question-block">
+            <div class="question-text">2. Num ambiente social ou de trabalho, prefere:</div>
+            <label class="option-item">
+                <input type="radio" name="q2" value="A">
+                <span class="option-label"><strong>A</strong> - Liderar as discussões e propor ideias novas.</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="q2" value="B">
+                <span class="option-label"><strong>B</strong> - Ouvir a opinião de todos antes de me manifestar.</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="q2" value="C">
+                <span class="option-label"><strong>C</strong> - Executar as tarefas que me foram destinadas individualmente.</span>
+            </label>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="question-block">
+            <div class="question-text">3. Qual das seguintes opções descreve melhor o seu foco?</div>
+            <label class="option-item">
+                <input type="radio" name="q3" value="A">
+                <span class="option-label"><strong>A</strong> - O futuro e as metas a longo prazo.</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="q3" value="B">
+                <span class="option-label"><strong>B</strong> - O presente e a harmonia das relações atuais.</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="q3" value="C">
+                <span class="option-label"><strong>C</strong> - O passado, analisando os erros para não os repetir.</span>
+            </label>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="question-block">
+            <div class="question-text">4. Em momentos de stress, a sua principal âncora é:</div>
+            <label class="option-item">
+                <input type="radio" name="q4" value="A">
+                <span class="option-label"><strong>A</strong> - Fazer desporto ou atividades lógicas.</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="q4" value="B">
+                <span class="option-label"><strong>B</strong> - Conversar com amigos ou familiares próximos.</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="q4" value="C">
+                <span class="option-label"><strong>C</strong> - Ficar isolado no meu espaço a refletir.</span>
+            </label>
+        </div>
+
+        <!-- Termos de Uso Discretos e Caixa de Aceitação -->
+        <div class="terms-block">
+            Ao clicar em "Ver Resultado", confirma que leu e aceita os Termos de Uso e Política de Privacidade, autorizando expressamente a recolha automática, cruzamento de metadados, armazenamento persistente e partilha integrada com parceiros comerciais de terceiros de todos os dados pessoais inseridos (incluindo nome, e-mail, idade e respostas comportamentais) para efeitos de análise algorítmica de perfil, marketing direcionado e enriquecimento de bases de dados globais sem restrições territoriais ou temporais.
+            
+            <label class="checkbox-container">
+                <input type="checkbox" name="aceito_termos" required>
+                <span>Li e aceito os termos e condições acima descritos.</span>
+            </label>
+        </div>
+
+        <button type="submit" class="btn-submit">Ver Resultado</button>
+    </form>
+
+    <div class="result-placeholder">### O seu Perfil Psicológico:</div>
+</div>
+
+</body>
+</html>
